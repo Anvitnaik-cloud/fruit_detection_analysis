@@ -1,0 +1,454 @@
+/* ══════════════════════════════════════
+   DASHBOARD PAGE
+   ══════════════════════════════════════ */
+
+.dashboard {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.dashboard-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.dashboard-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
+}
+
+.dashboard-subtitle {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* ─── Grid Layout ─── */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* ─── Fruit Card ─── */
+.fruit-card {
+  grid-column: 1 / 2;
+}
+
+.fruit-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.fruit-icon-wrap {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(127, 85, 57, 0.08);
+  border: 1px solid rgba(127, 85, 57, 0.12);
+  border-radius: 14px;
+  color: var(--brown);
+}
+
+.fruit-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.fruit-species {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.fruit-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  background: rgba(237, 224, 212, 0.5);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+}
+
+.meta-item svg {
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+.meta-item > div {
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.meta-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.meta-value {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* ─── Freshness Score Gauge ─── */
+.score-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.card-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+  width: 100%;
+  text-align: left;
+}
+
+.score-gauge {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  margin: 8px auto 20px;
+}
+
+.gauge-svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.gauge-bg {
+  fill: none;
+  stroke: rgba(127, 85, 57, 0.1);
+  stroke-width: 8;
+}
+
+.gauge-fill {
+  fill: none;
+  stroke: var(--brown);
+  stroke-width: 8;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gauge-center {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.gauge-value {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.gauge-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* ─── Ripeness ─── */
+.ripeness-card {
+  grid-column: 3 / 4;
+}
+
+.ripeness-bar-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.ripeness-bar {
+  flex: 1;
+  height: 10px;
+  background: rgba(127, 85, 57, 0.1);
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.ripeness-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--olive), var(--gold));
+  border-radius: 99px;
+  transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ripeness-percent {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  min-width: 48px;
+  text-align: right;
+}
+
+.ripeness-rec {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  padding: 12px;
+  background: rgba(101, 109, 74, 0.06);
+  border-radius: var(--border-radius);
+  border: 1px solid rgba(101, 109, 74, 0.1);
+}
+
+.ripeness-rec svg {
+  color: var(--olive);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* ─── Nutrition ─── */
+.nutrition-card {
+  grid-column: 1 / 3;
+}
+
+/* ─── VOC ─── */
+.voc-card {
+  grid-column: 1 / 3;
+}
+
+.voc-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.voc-header .card-title {
+  margin-bottom: 0;
+}
+
+.voc-legend {
+  display: flex;
+  gap: 16px;
+}
+
+.voc-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.voc-legend-item.ethylene svg { color: var(--brown); }
+.voc-legend-item.ethanol svg { color: var(--olive); }
+
+/* ─── Radar ─── */
+.radar-card {
+  grid-column: 3 / 4;
+}
+
+/* ─── Scan Status ─── */
+.scan-status {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 24px;
+  padding: 16px 24px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-lg);
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  transition: opacity var(--transition-base);
+  box-shadow: var(--shadow-sm);
+}
+
+.scan-status.pulse {
+  opacity: 0.7;
+}
+
+.scan-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--olive);
+  animation: glow 2s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+.scan-detail {
+  margin-left: auto;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 1024px) {
+  .dashboard-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .fruit-card { grid-column: 1 / 2; }
+  .nutrition-card { grid-column: 1 / 3; }
+  .voc-card { grid-column: 1 / 3; }
+  .ripeness-card { grid-column: auto; }
+  .radar-card { grid-column: auto; }
+}
+
+@media (max-width: 768px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .fruit-card,
+  .nutrition-card,
+  .voc-card,
+  .ripeness-card,
+  .radar-card {
+    grid-column: auto;
+  }
+
+  .scan-status {
+    flex-wrap: wrap;
+  }
+
+  .scan-detail {
+    margin-left: 22px;
+  }
+}
+
+/* ─── Dashboard Empty State ─── */
+.dashboard-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+  padding: 80px 24px;
+  color: var(--text-muted);
+}
+
+.dashboard-empty svg {
+  color: var(--brown-light);
+  opacity: 0.5;
+}
+
+.dashboard-empty h3 {
+  font-size: 1.3rem;
+  color: var(--text-primary);
+  margin-top: 4px;
+}
+
+.dashboard-empty p {
+  font-size: 0.92rem;
+  max-width: 420px;
+  line-height: 1.6;
+}
+
+.dashboard-empty .btn-primary {
+  margin-top: 8px;
+}
+
+/* ─── Vitamin Breakdown (Dashboard) ─── */
+.vitamin-breakdown {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.vitamin-row-dash {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.vitamin-name-dash {
+  width: 28px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.vitamin-bar-dash {
+  flex: 1;
+  height: 8px;
+  background: rgba(127, 85, 57, 0.1);
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.vitamin-fill-dash {
+  height: 100%;
+  background: linear-gradient(90deg, var(--olive), var(--gold));
+  border-radius: 99px;
+  transition: width 0.8s ease;
+}
+
+.vitamin-val-dash {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  min-width: 52px;
+  text-align: right;
+}
+
+/* ─── Minerals Grid (Dashboard) ─── */
+.minerals-dash-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 12px;
+}
+
+.mineral-dash-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px 12px;
+  background: rgba(237, 224, 212, 0.4);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+  text-align: center;
+}
+
+.mineral-dash-val {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.mineral-dash-name {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+/* ─── No Data Text ─── */
+.no-data-text {
+  text-align: center;
+  padding: 24px;
+  color: var(--text-muted);
+  font-size: 0.88rem;
+}
